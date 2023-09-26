@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 
-import { marketplaceAddress } from "D:/Web3/dreamcatcher-nft-marketplace/config";
+import { marketplaceAddress } from "../../config.js";
 
-import NFTMarketplace from "D:/Web3/dreamcatcher-nft-marketplace/artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import { dreamcatcher } from '../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json';
 
 export default function CreatorDashboard() {
     const [nfts, setNfts] = useState([]);
@@ -24,7 +24,7 @@ export default function CreatorDashboard() {
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
 
-        const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
+        const contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, signer);
         const data = await contract.fetchItemsListed();
 
         const items = await Promise.all(
