@@ -2,7 +2,7 @@ import "@styles/globals.css";
 import Link from "next/link";
 
 export const metadata = {
-    title: "One Piece",
+    title: "Dreamcatcher",
     description: "Decentralized Lottery",
 };
 
