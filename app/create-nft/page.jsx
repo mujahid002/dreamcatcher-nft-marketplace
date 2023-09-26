@@ -10,7 +10,7 @@ const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
 import { marketplaceAddress } from "../../config.js";
 
-import dreamcatcher from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import {dreamcatcher} from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function CreateItem() {
     const [fileUrl, setFileUrl] = useState(null);
@@ -58,7 +58,7 @@ export default function CreateItem() {
 
         /* create the NFT */
         const price = ethers.utils.parseUnits(formInput.price, "ether");
-        let contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
+        let contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, signer);
         let listingPrice = await contract.getListingPrice();
         listingPrice = listingPrice.toString();
         let transaction = await contract.createToken(url, price, { value: listingPrice });

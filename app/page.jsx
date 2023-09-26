@@ -7,7 +7,7 @@ import Web3Modal from "web3modal";
 
 import { marketplaceAddress } from "../config";
 
-import NFTMarketplace from "../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import { dreamcatcher } from "../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 const Home = () => {
     const [nfts, setNfts] = useState([]);
@@ -18,7 +18,7 @@ const Home = () => {
     async function loadNFTs() {
         /* create a generic provider and query for unsold market items */
         const provider = new ethers.providers.JsonRpcProvider();
-        const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, provider);
+        const contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, provider);
         const data = await contract.fetchMarketItems();
 
         /*

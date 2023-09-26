@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 import { marketplaceAddress } from "../../config.js";
 
-import dreamcatcher from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import { dreamcatcher }from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function MyAssets() {
     const [nfts, setNfts] = useState([]);
