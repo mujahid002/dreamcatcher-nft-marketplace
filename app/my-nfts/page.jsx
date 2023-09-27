@@ -6,9 +6,9 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import { useRouter } from "next/router";
 
-import { marketplaceAddress } from "../../config";
+import { marketplaceAddress } from "D:/Web3/dreamcatcher-nft-marketplace/config";
 
-import NFTMarketplace from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import NFTMarketplace from "D:/Web3/dreamcatcher-nft-marketplace/artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function MyAssets() {
     const [nfts, setNfts] = useState([]);
@@ -25,17 +25,12 @@ export default function MyAssets() {
         const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
-
-        const marketplaceContract = new ethers.Contract(
-            marketplaceAddress,
-            NFTMarketplace.abi,
-            signer
-        );
-        const data = await marketplaceContract.fetchMyNFTs();
+        const contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, signer);
+        const data = await contract.fetchMyNFTs();
 
         const items = await Promise.all(
             data.map(async (i) => {
-                const tokenURI = await marketplaceContract.tokenURI(i.tokenId);
+                const tokenURI = await contract.tokenURI(i.tokenId);
                 const meta = await axios.get(tokenURI);
                 let price = ethers.utils.formatUnits(i.price.toString(), "ether");
                 let item = {

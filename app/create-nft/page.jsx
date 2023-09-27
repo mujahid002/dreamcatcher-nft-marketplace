@@ -9,9 +9,9 @@ import Web3Modal from "web3modal";
 //const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 const client = ipfsHttpClient("https://nft.api.infura.io/");
 
-import { marketplaceAddress } from "../../config";
+import { marketplaceAddress } from "D:/Web3/dreamcatcher-nft-marketplace/config";
 
-import NFTMarketplace from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import NFTMarketplace from "D:/Web3/dreamcatcher-nft-marketplace/artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function CreateItem() {
     const [fileUrl, setFileUrl] = useState(null);
@@ -59,7 +59,7 @@ export default function CreateItem() {
 
         /* create the NFT */
         const price = ethers.utils.parseUnits(formInput.price, "ether");
-        let contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
+        let contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, signer);
         let listingPrice = await contract.getListingPrice();
         listingPrice = listingPrice.toString();
         let transaction = await contract.createToken(url, price, { value: listingPrice });
