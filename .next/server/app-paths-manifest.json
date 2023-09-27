@@ -1,6 +1,0 @@
-{
-  "/not-found": "app/not-found.js",
-  "/my-nfts/page": "app/my-nfts/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/create-nft/page": "app/create-nft/page.js"
-}
