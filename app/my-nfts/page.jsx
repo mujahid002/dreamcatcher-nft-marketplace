@@ -6,9 +6,9 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import { useRouter } from "next/router";
 
-import { marketplaceAddress } from "D:/Web3/dreamcatcher-nft-marketplace/config";
+import { marketplaceAddress } from "../../config";
 
-import NFTMarketplace from "D:/Web3/dreamcatcher-nft-marketplace/artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import dreamcatcher from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function MyAssets() {
     const [nfts, setNfts] = useState([]);

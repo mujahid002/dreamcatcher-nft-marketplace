@@ -1,4 +1,4 @@
-// File: C:\Users\mujahid shaik\Downloads\ocena_internship\dreamcatcher-nft-marketplace\app\dashboard\page.jsx
+// File: D:\Web3\dreamcatcher-nft-marketplace\app\dashboard\page.jsx
 import * as entry from '../../../../app/dashboard/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

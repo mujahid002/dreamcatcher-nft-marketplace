@@ -9,9 +9,9 @@ import Web3Modal from "web3modal";
 //const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 const client = ipfsHttpClient("https://nft.api.infura.io/");
 
-import { marketplaceAddress } from "D:/Web3/dreamcatcher-nft-marketplace/config";
+import { marketplaceAddress } from "../../config";
 
-import NFTMarketplace from "D:/Web3/dreamcatcher-nft-marketplace/artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
+import dreamcatcher from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function CreateItem() {
     const [fileUrl, setFileUrl] = useState(null);
