@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
   "/page": "app/page.js",
-  "/create-nft/page": "app/create-nft/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/create-nft/page": "app/create-nft/page.js",
   "/my-nfts/page": "app/my-nfts/page.js"
-=======
-  "/create-nft/page": "app/create-nft/page.js"
->>>>>>> 57ecfd1e59d08992a6d51c53bc6080e06f5737d0
 }

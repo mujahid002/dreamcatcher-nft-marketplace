@@ -1,36 +1,30 @@
 {
   "pages": {
-<<<<<<< HEAD
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-=======
->>>>>>> 57ecfd1e59d08992a6d51c53bc6080e06f5737d0
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/create-nft/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/create-nft/page.js"
-    ],
     "/my-nfts/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/my-nfts/page.js"
-<<<<<<< HEAD
     ],
     "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
-=======
->>>>>>> 57ecfd1e59d08992a6d51c53bc6080e06f5737d0
+    ],
+    "/create-nft/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/create-nft/page.js"
     ]
   }
 }

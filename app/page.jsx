@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 
-import { marketplaceAddress } from "../config";
+import { marketplaceAddress } from "../config.js";
 
 import { dreamcatcher } from "../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
@@ -51,7 +51,7 @@ const Home = () => {
         const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
-        const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, signer);
+        const contract = new ethers.Contract(marketplaceAddress, dreamcatcher.abi, signer);
 
         /* user will be prompted to pay the asking proces to complete the transaction */
         const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
