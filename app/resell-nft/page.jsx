@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Web3Modal from "web3modal";
 
-import { marketplaceAddress } from "../config";
+import { marketplaceAddress } from "../../config";
 
-import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import NFTMarketplace from "../../artifacts/contracts/dreamcatcher.sol/dreamcatcher.json";
 
 export default function ResellNFT() {
     const [formInput, updateFormInput] = useState({ price: "", image: "" });
