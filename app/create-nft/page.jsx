@@ -5,9 +5,10 @@ import { ethers } from "ethers";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 import { useRouter } from "next/router";
 import Web3Modal from "web3modal";
+import { uploadFileToIPFS, uploadJSONToIPFS } from "../pinata";
 
 //const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
-const client = ipfsHttpClient("https://nft.api.infura.io/");
+const client = ipfsHttpClient("https://sepolia.infura.io/v3/6d70dc9586e04d1e9f9a060d1d58c76a");
 
 import { marketplaceAddress } from "../../config";
 
@@ -22,11 +23,13 @@ export default function CreateItem() {
         /* upload image to IPFS */
         const file = e.target.files[0];
         try {
+            //const response = await uploadFileToIPFS(file);
             const added = await client.add(file, {
                 progress: (prog) => console.log(`received: ${prog}`),
             });
             const url = `https://ipfs.infura.io/ipfs/${added.path}`;
             setFileUrl(url);
+            //setFileURL(response.pinataURL);
         } catch (error) {
             console.log("Error uploading file: ", error);
         }
